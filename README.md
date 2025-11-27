@@ -1,6 +1,6 @@
 # MetaViewer
 
-MetaViewer is a modern metadata inspection and analysis tool, designed as an improved and streamlined alternative to *exiftool*.  
+MetaViewer is a modern metadata inspection and analysis tool written in Rust, designed as an improved and streamlined alternative to *exiftool*.  
 It focuses on simplicity, speed, and extensibility, making it easier for security professionals, forensic analysts, developers, and analysts to extract and review metadata across multiple file formats.
 
 ## ✨ Features
