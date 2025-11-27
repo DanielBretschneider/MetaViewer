@@ -14,12 +14,19 @@
 /// Future expansion: implement modular parsers for each file type.
 /// ------------------------------------------------
 
-use std::env; // Provides access to environment variables and command-line arguments
+// Provides access to environment variables and command-line arguments
+use std::env; 
+
+// add module utils
+mod utils;
 
 
 fn main() 
 {
+    // get cmd args from utils
+    let args = utils::get_command_line_args();
 
-
+    // print args - run with 'cargo run -- apple banana peach'
+    println!("CMD Args: {:?}", args);
 }
 
