@@ -1,10 +1,6 @@
 /// main.rs
 ///
 /// MetaViewer - A modern metadata inspection tool
-/// ------------------------------------------------
-/// This is a clean starting point for your Rust project.
-/// It sets up a basic CLI structure, error handling, and room for future expansion.
-/// ------------------------------------------------
 ///
 /// Filetypes for first version:
 /// - TXT: word count, encoding
@@ -13,6 +9,10 @@
 /// 
 /// Future expansion: implement modular parsers for each file type.
 /// ------------------------------------------------
+///
+//! Author: Daniel Bretschneider, daniel@bretschneider.cc
+//! Version: 1.0
+//! Date: 27/11/2025
 
 // Provides access to environment variables and command-line arguments
 use std::env; 
