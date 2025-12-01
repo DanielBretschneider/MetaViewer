@@ -31,4 +31,4 @@ It focuses on simplicity, speed, and extensibility, making it easier for securit
 MetaViewer is designed to be simple to use from the command line:
 
 ```bash
-metaviewer file.pdf
+metaviewer file.filextension
