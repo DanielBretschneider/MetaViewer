@@ -97,12 +97,5 @@ pub fn file_exists(filename : &str) -> bool
     let path = Path::new(filename);
 
     // check if path exists
-    if path.exists()
-    {
-        true
-    }
-    else
-    {
-        false
-    }
+    path.exists()
 }
