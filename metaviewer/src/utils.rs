@@ -10,6 +10,10 @@
 /// import env module from Rust's stand library
 use std::env;
 use std::path::Path;
+use colored::*;
+
+/// Global Vars
+pub const CMD_HELP: &str = "help";
 
 /// Returns all command line arguments as a vector of strings,
 /// excluding the program name. (growable list of strings)
@@ -25,6 +29,7 @@ pub fn check_command_line_args(args : Vec<String>) -> bool
     if args.len() != 1
     {
         println!("[-] Command line arguments must be exactly 1.");
+        println!("[-] Type 'help' for information on usage.");
         println!("[-] Example usage: metaviewer file.pdf");
         println!("[-] Exiting.");
         return false;
@@ -37,6 +42,7 @@ pub fn check_command_line_args(args : Vec<String>) -> bool
     if candidate.is_empty()
     {
         println!("[-] Command line arguments cannot be empty.");
+        println!("[-] Type 'help' for information on usage.");
         println!("[-] Example usage: metaviewer file.pdf");
         println!("[-] Exiting.");
         return false;
@@ -54,6 +60,14 @@ pub fn check_command_line_args(args : Vec<String>) -> bool
         println!("[-] Example usage: metaviewer file.pdf");
         println!("[-] Exiting.");
         return false;
+    }
+
+    // check if help msg desired
+    if candidate == CMD_HELP
+    {
+        //print help message
+        print_help_message();
+        return true;
     }
 
     // check if the file exists
@@ -98,4 +112,20 @@ pub fn file_exists(filename : &str) -> bool
 
     // check if path exists
     path.exists()
+}
+
+/// prints usage message to console if user types 'help'
+pub fn print_help_message()
+{
+    println!("NAME:");
+    println!("  {}", "MetaViewer - Metadata Inspection Tool\n".bold());
+    println!("USAGE:");
+    println!("  metaviewer <file>\n");
+    println!("VERSION:");
+    println!("  1.0\n");
+    println!("AUTHORS:");
+    println!("  Daniel Bretschneider (@jeromeium), daniel@bretschneider.cc\n");
+    println!("OPTIONS:");
+    println!("  file.extension   {}", "input name of file".green());
+    println!("  help             {}", "Show this help message".green());
 }

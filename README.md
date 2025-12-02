@@ -32,3 +32,5 @@ MetaViewer is designed to be simple to use from the command line:
 
 ```bash
 metaviewer file.filextension
+
+![MetaViewer Help Message](/img/help_msg.png)

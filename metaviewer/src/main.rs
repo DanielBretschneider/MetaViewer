@@ -1,3 +1,4 @@
+
 /// main.rs
 ///
 /// MetaViewer - A modern metadata inspection tool
@@ -31,13 +32,12 @@ fn main()
     // let argc = args.len();
 
     // check argc (arguemnt count)
-    let args_check = utils::check_command_line_args(args);
+    let args_check = utils::check_command_line_args(args.clone());
 
     // proceed if true and exit metaviewer if checks failed
     if args_check
     {
-        // checks positive
-        println!("[*] Looks good!");
+        
     }
     else
     {
