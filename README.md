@@ -30,7 +30,9 @@ It focuses on simplicity, speed, and extensibility, making it easier for securit
 
 MetaViewer is designed to be simple to use from the command line:
 
+![MetaViewer Help Message](/img/help_msg.png)
+
 ```bash
 metaviewer file.filextension
 
-![MetaViewer Help Message](/img/help_msg.png)
+
