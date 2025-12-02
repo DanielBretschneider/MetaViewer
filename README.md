@@ -21,10 +21,17 @@ It focuses on simplicity, speed, and extensibility, making it easier for securit
 
 ## 🚀 Roadmap
 
+In the long run:
 - Add support for images, audio, and video formats  
 - Advanced filtering and export options (JSON, CSV)  
 - Integration with security and OSINT workflows  
 - Plugin system for community-driven extensions  
+
+Next steps:
+- 1.1: Implement help message (finished)
+- 1.2: Enable support for .txt file analysis (in progress)
+- 1.3: Introduce analysis features for Word files (not started)
+- 1.4: Provide support for inspection of Excel files (not started)
 
 ## 🔧 Usage
 

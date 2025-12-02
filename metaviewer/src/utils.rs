@@ -4,7 +4,7 @@
 /// of command line args or string operations.
 ///
 /// Author: Daniel Bretschneider, daniel@bretschneider.cc
-/// Version: 1.0
+/// Version: 1.1
 /// Date: 27/11/2025
 
 /// import env module from Rust's stand library
@@ -117,12 +117,13 @@ pub fn file_exists(filename : &str) -> bool
 /// prints usage message to console if user types 'help'
 pub fn print_help_message()
 {
+    println!("[*] Show help message");
     println!("NAME:");
     println!("  {}", "MetaViewer - Metadata Inspection Tool\n".bold());
     println!("USAGE:");
     println!("  metaviewer <file>\n");
     println!("VERSION:");
-    println!("  1.0\n");
+    println!("  1.1\n");
     println!("AUTHORS:");
     println!("  Daniel Bretschneider (@jeromeium), daniel@bretschneider.cc\n");
     println!("OPTIONS:");

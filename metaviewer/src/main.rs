@@ -12,7 +12,7 @@
 /// ------------------------------------------------
 ///
 /// Author: Daniel Bretschneider, daniel@bretschneider.cc
-/// Version: 1.0
+/// Version: 1.1
 /// Date: 27/11/2025
 
 // Provides access to environment variables and command-line arguments
@@ -25,6 +25,9 @@ mod utils;
 
 fn main() 
 {
+    // start mesage
+    println!("[*] MetaViewer 1.1");
+
     // get cmd args from utils
     let args = utils::get_command_line_args();
 
