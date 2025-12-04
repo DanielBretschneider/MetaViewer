@@ -82,7 +82,7 @@ pub fn check_command_line_args(args : Vec<String>) -> bool
             if file_exists(fname)
             {
                 println!("[+] Command line arguments check succesfull");
-                println!("[+] File '{}' exists", fname);
+                println!("[+] File '{}' exists", fname.green());
                 println!("[+] Proceed with metadata extraction");
 
                 // checks all positive
@@ -90,9 +90,9 @@ pub fn check_command_line_args(args : Vec<String>) -> bool
             } 
             else
             {
-                println!("[+] Command line arguments check failed");
-                println!("[+] File '{}' does no exist", fname);
-                println!("[+] Exiting.");
+                println!("[-] Command line arguments check failed");
+                println!("[-] File '{}' does no exist", fname);
+                println!("[-] Exiting.");
 
                 // last check failed
                 return false;

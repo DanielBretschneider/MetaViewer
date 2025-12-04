@@ -18,10 +18,11 @@
 // Provides access to environment variables and command-line arguments
 //use std::env; 
 use std::process;
+use std::path::Path;
 
-// add module utils
+// add modules
 mod utils;
-
+mod file_operations;
 
 fn main() 
 {
@@ -37,10 +38,20 @@ fn main()
     // check argc (arguemnt count)
     let args_check = utils::check_command_line_args(args.clone());
 
+    // extract file name
+    let filename = &args[0];
+
     // proceed if true and exit metaviewer if checks failed
     if args_check
     {
-        
+        if filename.ends_with(".txt")
+        {
+            // get path from filename
+            let path = Path::new(filename);
+
+            // analizing txt file (ver 1.2)
+            let _ = file_operations::print_global_file_attributes(path);
+        }
     }
     else
     {
