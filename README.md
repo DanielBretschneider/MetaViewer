@@ -41,5 +41,11 @@ MetaViewer is designed to be simple to use from the command line:
 
 ```bash
 metaviewer file.filextension
+```
 
+## 🗒️ Examples
+
+Viewing info on a text file randomly found in my /home dir
+
+![MetaViewer txt File Inspection](/img/txt_file_inspection.png)
 
