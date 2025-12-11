@@ -24,7 +24,7 @@ use std::path::Path;
 mod utils;
 mod file_operations;
 
-fn main() 
+fn main() -> Result<(), std::io::Error>
 {
     // start mesage
     println!("[*] MetaViewer 1.1");
@@ -44,13 +44,24 @@ fn main()
     // proceed if true and exit metaviewer if checks failed
     if args_check
     {
-        if filename.ends_with(".txt")
-        {
-            // get path from filename
-            let path = Path::new(filename);
+        // print basic file info
+        // get path from filename
+        let path = Path::new(filename);
 
-            // analizing txt file (ver 1.2)
-            let _ = file_operations::print_global_file_attributes(path);
+        // get extension
+        let file_extension = path.extension().and_then(|ext| ext.to_str()).unwrap_or("");
+
+        // analizing txt file (ver 1.2)
+        let _ = file_operations::print_global_file_attributes(path);
+        
+        // next operations depending on file extension
+        match file_extension
+        {
+            "txt" => file_operations::print_txt_specific_metadata(path)?,
+            "pdf" => println!("[*] pdf file"),
+            "docx" => println!("[*] Word document"),
+            "xlsx" => println!("[*] Excel file"),
+            _ => println!("[-] Unknown file extension."),
         }
     }
     else
@@ -58,5 +69,8 @@ fn main()
         // 0 = success, nonzero = error
         process::exit(0);
     }
+
+    // err handling
+    Ok(())
 }
 

@@ -33,10 +33,7 @@ pub fn print_global_file_attributes(path: &Path) -> std::io::Result<()>
     println!("Owner UID: \t\t{}", format!("{}", metadata.uid()).blue());
     println!("Group GID: \t\t{}", format!("{}", metadata.gid()).blue());
     println!("Permissions (mode): \t{}\n", format!("{}", metadata.uid()).blue());
-
-    // get more specific metadata on txt file
-    let _ = print_txt_specific_metadata(path); // my result in Err, so handled by let _
-
+    
     // end of txt file analysis
     Ok(())
 }
