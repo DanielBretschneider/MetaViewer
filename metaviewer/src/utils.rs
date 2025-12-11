@@ -4,7 +4,7 @@
 /// of command line args or string operations.
 ///
 /// Author: Daniel Bretschneider, daniel@bretschneider.cc
-/// Version: 1.1
+/// Version: 1.2
 /// Date: 27/11/2025
 
 /// import env module from Rust's stand library

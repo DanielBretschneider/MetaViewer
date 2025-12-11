@@ -12,7 +12,7 @@
 /// ------------------------------------------------
 ///
 /// Author: Daniel Bretschneider, daniel@bretschneider.cc
-/// Version: 1.1
+/// Version: 1.2
 /// Date: 27/11/2025
 
 // Provides access to environment variables and command-line arguments
@@ -58,7 +58,7 @@ fn main() -> Result<(), std::io::Error>
         match file_extension
         {
             "txt" => file_operations::print_txt_specific_metadata(path)?,
-            "pdf" => println!("[*] pdf file"),
+            "pdf" => file_operations::print_pdf_specific_metadata(path)?,
             "docx" => println!("[*] Word document"),
             "xlsx" => println!("[*] Excel file"),
             _ => println!("[-] Unknown file extension."),

@@ -9,6 +9,8 @@
 use std::fs;
 use colored::*;
 use std::path::Path;
+use std::time::SystemTime;
+use chrono::{DateTime, Local};
 use std::os::unix::fs::MetadataExt; // For Unix-specific extensions (inode, uid, gid, etc.)
 //use chrono::{DateTime, NaiveDateTime, Utc}; // for conversion of unix timestampt into utc
 
@@ -23,10 +25,23 @@ pub fn print_global_file_attributes(path: &Path) -> std::io::Result<()>
     println!("Is file: \t\t{}", metadata.is_file().to_string().blue());
     println!("Is directory: \t\t{}", metadata.is_dir().to_string().blue());
 
+    // convert unix system time to human readable time format
+    let created: SystemTime = metadata.created()?;
+    let modified: SystemTime = metadata.modified()?;
+    let accessed: SystemTime = metadata.accessed()?;
+
+    let daytime_created: DateTime<Local> = created.into();
+    let daytime_modified: DateTime<Local> = modified.into();
+    let daytime_accessed: DateTime<Local> = accessed.into();
+
+    let formatted_created: String = daytime_created.format("%Y-%m-%d %H:%M:%S").to_string();
+    let formatted_modified: String = daytime_modified.format("%Y-%m-%d %H:%M:%S").to_string();
+    let formatted_accessed: String = daytime_accessed.format("%Y-%m-%d %H:%M:%S").to_string();
+
     // Timestamps
-    println!("Created: \t\t{}", format!("{:?}", metadata.created()?).blue());
-    println!("Modified: \t\t{}", format!("{:?}", metadata.modified()?).blue());
-    println!("Accessed: \t\t{}", format!("{:?}", metadata.accessed()?).blue());
+    println!("Created: \t\t{}", formatted_created.blue());
+    println!("Modified: \t\t{}", formatted_modified.blue());
+    println!("Accessed: \t\t{}", formatted_accessed.blue());
 
     // Unix-specific attributes
     println!("Inode: \t\t\t{}", metadata.ino().to_string().blue());
@@ -37,6 +52,7 @@ pub fn print_global_file_attributes(path: &Path) -> std::io::Result<()>
     // end of txt file analysis
     Ok(())
 }
+
 
 /// print txt file specific metadata
 pub fn print_txt_specific_metadata(path: &Path) -> std::io::Result<()> 
@@ -62,5 +78,16 @@ pub fn print_txt_specific_metadata(path: &Path) -> std::io::Result<()>
     println!("Lines: \t\t\t{}", format!("{}", num_of_lines_in_file.to_string().blue()));
 
     // finish
+    Ok(())
+}
+
+
+/// print file specific metadata for PDF
+pub fn print_pdf_specific_metadata(path: &Path) -> std::io::Result<()> 
+{
+    // this is just a placeholder
+    let _path_str = path.display().to_string();
+
+    // err handling
     Ok(())
 }
