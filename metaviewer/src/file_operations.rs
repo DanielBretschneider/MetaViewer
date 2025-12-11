@@ -3,7 +3,7 @@
 /// This module holds a few methods which will be used to extract meta data from files.
 ///
 /// Author: Daniel Bretschneider, daniel@bretschneider.cc
-/// Version: 1.1
+/// Version: 1.2
 /// Date: 04/12/2025
 
 use std::fs;

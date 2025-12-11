@@ -29,8 +29,8 @@ In the long run:
 
 Next steps:
 - 1.1: Implement help message (finished)
-- 1.2: Enable support for .txt file analysis (in progress)
-- 1.3: Introduce analysis features for Word files (not started)
+- 1.2: Enable support for .txt file analysis (finished)
+- 1.3: Introduce analysis features for Word files (in progress)
 - 1.4: Provide support for inspection of Excel files (not started)
 
 ## 🔧 Usage
